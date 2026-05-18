@@ -20,5 +20,6 @@ export default defineConfig({
     host: true,
     strictPort: true,
     port: Number(process.env.PORT) || 4173,
+    allowedHosts: ["kaiyuandengdu-production.up.railway.app", ".railway.app"],
   },
 });

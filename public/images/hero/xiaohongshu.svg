@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- White background -->
+  <rect width="200" height="200" fill="white" rx="40"/>
+  <!-- Xiaohongshu logo -->
+  <g transform="translate(30, 30)">
+    <rect width="140" height="140" fill="#FF2B2B" rx="20"/>
+    <text x="70" y="95" font-size="80" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">小</text>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+# robots.txt for 开元灯具批发城
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kypifa.zeabur.app/sitemap.xml
+
+# Disallow admin or private paths (if any)
+# Disallow: /admin/

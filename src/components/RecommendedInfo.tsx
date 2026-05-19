@@ -204,25 +204,25 @@ export default function RecommendedInfo({ onSectionChange }: RecommendedInfoProp
               </div>
             </motion.div>
 
-            {/* 意丞灯饰 */}
+            {/* 美乎灯饰 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
-              onClick={() => handleBrandClick('yicheng')}
+              onClick={() => handleBrandClick('meihu')}
               className="relative h-[420px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer group rounded-lg bg-white"
             >
               <div className="h-3/4 overflow-hidden">
                 <img 
-                  src="https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150558.png"
-                  alt="意丞灯饰"
+                  src="https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251215174719.png"
+                  alt="美乎灯饰"
                   className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-gray-100 to-gray-200 p-6">
-                <h4 className="text-gray-800 text-xl font-bold mb-2">意丞灯饰</h4>
-                <p className="text-gray-600 text-sm">艺术灯具设计与制造企业</p>
+                <h4 className="text-gray-800 text-xl font-bold mb-2">美乎灯饰</h4>
+                <p className="text-gray-600 text-sm">现代简约风格灯饰设计与制造</p>
               </div>
             </motion.div>
           </div>

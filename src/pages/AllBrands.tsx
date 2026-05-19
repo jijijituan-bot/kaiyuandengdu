@@ -69,11 +69,6 @@ const allBrands = [{
     slug: "muguang",
     logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150516.png"
 }, {
-    id: "13",
-    name: "意丞灯饰",
-    slug: "yicheng",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150558.png"
-}, {
     id: "14",
     name: "伊戈尔",
     slug: "yigeer",

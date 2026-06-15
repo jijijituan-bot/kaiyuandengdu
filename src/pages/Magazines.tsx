@@ -1,7 +1,7 @@
 ﻿import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Magazine {
   id: string;
@@ -161,6 +161,39 @@ const magazines: Record<string, Magazine> = {
     fileName: '2025-第三期月刊.pdf',
     category: 'monthly',
     coverImage: 'https://lf-code-agent.coze.cn/obj/x-ai-cn/332763309314/attachment/50099202dc4bb64e231039eacd9c609a_20251223114631.png'
+  },
+  monthly_4: {
+    id: 'monthly_4',
+    title: '2026-第四期月刊',
+    description: '2026年第四期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: 'http://cdn.kypfc.com/2026-%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%9C%88%E5%88%8A%20.pdf',
+    fileName: '2026-第四期月刊.pdf',
+    category: 'monthly',
+    coverImage: 'https://i.ibb.co/jkdmWVJ9/8bf4c0f7e95c.png'
+  },
+  monthly_5: {
+    id: 'monthly_5',
+    title: '2026-第五期月刊',
+    description: '2026年第五期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: 'http://cdn.kypfc.com/2026-%E7%AC%AC%E4%BA%94%E6%9C%9F%E6%9C%88%E5%88%8A%20.pdf',
+    fileName: '2026-第五期月刊.pdf',
+    category: 'monthly',
+    coverImage: 'https://i.ibb.co/8gJzyJsM/63a3995e2559.png'
+  },
+  monthly_6: {
+    id: 'monthly_6',
+    title: '2026-第六期月刊',
+    description: '2026年第六期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: 'http://cdn.kypfc.com/2026-%E7%AC%AC%E5%85%AD%E6%9C%9F%E6%9C%88%E5%88%8A%20.pdf',
+    fileName: '2026-第六期月刊.pdf',
+    category: 'monthly',
+    coverImage: 'https://i.ibb.co/JW9LLFM4/5c5f6e7d25f4.png'
   },
 };
 
@@ -367,6 +400,8 @@ export default function Magazines() {
   }
 
   // 列表页面
+  const [monthlyScrollPosition, setMonthlyScrollPosition] = useState(0);
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* 导航栏 */}
@@ -416,6 +451,111 @@ export default function Magazines() {
             });
 
           if (categoryMags.length === 0) return null;
+          
+          // 月刊使用横向滚动
+          if (category === 'monthly') {
+            const itemsPerPage = 5;
+            const maxScroll = Math.max(0, categoryMags.length - itemsPerPage);
+            
+            return (
+              <div key={category} className="mb-24 relative">
+                <div className="flex items-center mb-12">
+                  <div className="w-2 h-8 bg-orange-500 mr-4"></div>
+                  <h3 className="text-2xl font-bold text-gray-800 tracking-wide">{categoryTitles[category]}</h3>
+                  <div className="flex-grow ml-6 h-px bg-gray-200"></div>
+                  {categoryMags.length > itemsPerPage && (
+                    <div className="flex gap-2 ml-4">
+                      <button
+                        onClick={() => setMonthlyScrollPosition(Math.max(0, monthlyScrollPosition - 1))}
+                        disabled={monthlyScrollPosition === 0}
+                        className="w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-md"
+                      >
+                        <i className="fas fa-chevron-left"></i>
+                      </button>
+                      <button
+                        onClick={() => setMonthlyScrollPosition(Math.min(maxScroll, monthlyScrollPosition + 1))}
+                        disabled={monthlyScrollPosition >= maxScroll}
+                        className="w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-md"
+                      >
+                        <i className="fas fa-chevron-right"></i>
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <div className="relative bg-[#f0e6d2] px-8 pt-12 pb-4 rounded-lg shadow-inner border border-[#e0d6c2] overflow-hidden">
+                  <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-6 bg-[#dcbfa3] border-t border-[#c5a88d] shadow-md transform translate-y-2 rounded-b-lg z-0"></div>
+
+                  <div className="relative z-10 overflow-hidden">
+                    <motion.div 
+                      className="grid grid-cols-5 gap-8 md:gap-10"
+                      animate={{ x: -monthlyScrollPosition * (100 / itemsPerPage) + '%' }}
+                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    >
+                      {categoryMags.map((mag, index) => (
+                        <motion.div
+                          key={mag.id}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.05 }}
+                          viewport={{ once: true }}
+                          onClick={() => navigate(`/magazines/${mag.id}`)}
+                          className="group cursor-pointer flex flex-col items-center"
+                        >
+                          <div className="relative w-full aspect-[3/4] mb-4 perspective-1000 transition-transform duration-300 transform group-hover:-translate-y-4 group-hover:rotate-1 origin-bottom">
+                            <div className={`absolute inset-0 ${mag.coverImage ? 'bg-white' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden`}>
+                              <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/10 z-10"></div>
+                              <div className="absolute left-3 top-0 bottom-0 w-[1px] bg-white/30 z-10"></div>
+                              
+                              {mag.coverImage ? (
+                                <img 
+                                  src={mag.coverImage} 
+                                  alt={mag.title}
+                                  className="w-full h-full object-cover"
+                                />
+                              ) : (
+                                <div className="p-3 h-full flex flex-col relative z-0">
+                                  <div className="flex justify-between items-start mb-2">
+                                    <i className={`fas ${mag.icon} text-lg text-gray-800/40`}></i>
+                                    <span className="text-[8px] font-bold text-gray-500 border border-gray-400/30 px-1 rounded">PDF</span>
+                                  </div>
+                                  <h4 className="text-lg font-serif font-bold text-gray-800 leading-tight mb-2 line-clamp-3">
+                                    {mag.title.replace(/开元|版|期/g, '')}
+                                  </h4>
+                                  <div className="mt-auto pt-2 border-t border-black/5">
+                                    <p className="text-[10px] text-gray-600 line-clamp-2 leading-tight opacity-80">{mag.description}</p>
+                                  </div>
+                                </div>
+                              )}
+                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none"></div>
+                            </div>
+                            <div className="absolute top-[1px] bottom-[1px] right-0 w-[4px] bg-white transform translate-x-[2px] translate-z-[-2px] skew-y-1 shadow-sm"></div>
+                          </div>
+                          <div className="w-[80%] h-3 bg-black/20 blur-md rounded-full transition-all duration-300 group-hover:w-[90%] group-hover:blur-lg"></div>
+                          <div className="mt-4 text-center w-full">
+                            <h4 className="text-sm font-bold text-gray-800 mb-2 truncate px-1 group-hover:text-orange-600 transition-colors">{mag.title}</h4>
+                            <button 
+                              className="text-xs bg-white border border-gray-300 text-gray-600 px-3 py-1 rounded-full hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all shadow-sm flex items-center justify-center mx-auto gap-1"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (!mag.hasSubVersions) {
+                                  handleDownload(mag.downloadUrl, mag.fileName);
+                                }
+                              }}
+                            >
+                              <i className={`fas ${mag.hasSubVersions ? 'fa-folder-open' : 'fa-download'} text-[10px]`}></i>
+                              <span>{mag.hasSubVersions ? '查看' : '下载'}</span>
+                            </button>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
 
           return (
             <div key={category} className="mb-24 relative">

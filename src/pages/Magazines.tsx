@@ -201,15 +201,17 @@ export default function Magazines() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const magazine = type ? magazines[type] : null;
+  const [monthlyScrollPosition, setMonthlyScrollPosition] = useState(0);
 
   // 设置页面标题
   useEffect(() => {
     document.title = '开元灯具批发城-集智能商照、家居灯饰、照明配件一站式采购综合体';
   }, []);
 
-  // 路由变化时滚动到顶部
+  // 路由变化时滚动到顶部并重置状态
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.scrollTo(0, 0);
+    setMonthlyScrollPosition(0);
   }, [type]);
 
   const handleDownload = (url: string, fileName: string) => {
@@ -234,7 +236,7 @@ export default function Magazines() {
   // 详情页面
   if (magazine) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div key={type} className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* 导航栏 */}
         <div className="bg-white shadow-md sticky top-0 z-40">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -405,7 +407,6 @@ export default function Magazines() {
   }
 
   // 列表页面
-  const [monthlyScrollPosition, setMonthlyScrollPosition] = useState(0);
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

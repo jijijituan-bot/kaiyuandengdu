@@ -174,16 +174,16 @@ const brandData: Record<string, BrandInfo> = {
       phone: "13411685639"
     }
   },
-  muguang: {
-    name: "慕光灯饰",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150516.png",
-    description: "现代家居和商业照明产品提供商",
-    history: "慕光灯饰创立于2015年，转型为全光谱护眼照明企业",
-    products: ["现代简约吊灯", "北欧风格灯具", "后现代灯具", "智能照明"],
-    advantages: ["独特设计理念", "高品质原材料", "精湛制造工艺"],
+  teena: {
+    name: "TEE NA Lighting",
+    logoUrl: "https://i.ibb.co/990KpzHK/801278b9a6e1.png",
+    description: "以差异化为核心竞争力的TEE NA Lighting,以"专精特新"为发展内核",
+    history: "专业、专注是TEE NALighting始终坚守的发展理念，企业从创立伊始一直深耕户外照明领域，品牌精选优质铝材、玻璃、亚克力等耐用材质;光源优选普瑞、科锐等行业知名品牌，并标配防水驱动电源，全系列产品均达到IP65级防水防尘标准，并通过CE、BIS、ROHS等多项国际权威认证，严苛品质经得起全球市场检哈。",
+    products: ["庭院", "别墅", "商业", "景观"],
+    advantages: ["精准定制", "多元场景需求", "避免同质化竟争"],
     contactInfo: {
-      address: "开元批发城H116-117",
-      phone: "13249010826"
+      address: "中山市古镇镇开元灯具批发城L区145-146卡",
+      phone: "18125209206"
     }
   },
   yicheng: {
@@ -427,14 +427,15 @@ export default function BrandDetail() {
                     { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217161515.png", alt: "生产设备", title: "现代化生产设备", description: "先进的生产设备，提高生产效率和产品质量" },
                     { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217161523.png", alt: "产品展示", title: "产品展示", description: "丰富的产品系列，满足各种灯饰配件需求" }
                   ];
-                case "慕光灯饰":
+                case "TEE NA Lighting":
                   return [
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217164415.png", alt: "现代简约吊灯", title: "现代简约吊灯", description: "简洁大气的设计，适合现代家居风格" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217164424.png", alt: "北欧风格灯具", title: "北欧风格灯具", description: "温暖舒适的北欧设计，打造温馨家居" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217164433.png", alt: "后现代灯具", title: "后现代灯具", description: "独特的设计理念，彰显个性品味" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217164441.png", alt: "智能照明系统", title: "智能照明系统", description: "智能控制，为生活增添便利" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217164448.png", alt: "全光谱护眼照明", title: "全光谱护眼照明", description: "健康护眼，呵护家人视力" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217164458.png", alt: "展厅展示", title: "展厅展示", description: "专业的展厅环境，展示全系列产品" }
+                    { url: "https://i.ibb.co/xWT8PCN/c8123f808cce.png", alt: "专业、专注是始终坚守的发展理念", title: "专业、专注是始终坚守的发展理念", description: "企业从创立伊始一直深耕户外照明领域，品牌精选优质铝材、玻璃、亚克力等耐用材质;光源优选普瑞、科锐等行业知名品牌，并标配防水驱动电源" },
+                    { url: "https://i.ibb.co/cK1pxPj3/093b2458f992.png", alt: "专注小而精产品的企业", title: "专注"小而精"产品的企业", description: "TEENALighting深耕非标定制赛道，避免同质化竟争，可根据客尸需求实现产品外观定制" },
+                    { url: "https://i.ibb.co/ZzQ5RdTQ/007fb1267849.png", alt: "创新是品牌立足的核心动力", title: "创新是品牌立足的核心动力", description: "TEENALighting以原创设计打破行业局限，持续引领户外照明美学潮流" },
+                    { url: "https://i.ibb.co/WNN58k4w/2f3dfe15ecb9.png", alt: "十余载匠心沉淀", title: "十余载匠心沉淀", description: "TEENALighting不仅以硬实力立足，更以专业形象走向全球" },
+                    { url: "https://i.ibb.co/rGfM6jS5/e03655652632.png", alt: "坚持技术创新与设计升级双轮驱动", title: "坚持技术创新与设计升级双轮驱动", description: "TEENALighting将继续深耕户外非标定制领域" },
+                    { url: "https://i.ibb.co/HLY8DkDh/394097602bc5.png", alt: "材质稳定性有着严苛要求", title: "材质稳定性有着严苛要求", description: "近年来，随着旅游产业的火爆，景观亮化、户外照明行业迎来持续发展。区别于普通室内灯具，户外灯具需长期经受风雨、高低温、灰尘侵蚀，对外观设计、防水性" },
+                    { url: "https://i.ibb.co/VWGgZpNX/b2c3cd0a5ef2.png", alt: "收获全球客户的高度信赖", title: "收获全球客户的高度信赖", description: "用硬核实力与定制化服务，成为非标定制户外灯具领域的优质品牌，产品远销欧洲、中东等多个国家和地区" }
                   ];
                 case "杰品6988灯饰":
                   return [

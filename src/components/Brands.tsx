@@ -62,9 +62,9 @@ export default function Brands() {
             slug: "jingye"
         },
         {
-            name: "慕光灯饰",
-            logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150516.png",
-            slug: "muguang"
+            name: "TEE NA Lighting",
+            logoUrl: "https://i.ibb.co/990KpzHK/801278b9a6e1.png",
+            slug: "teena"
         }
     ];
 

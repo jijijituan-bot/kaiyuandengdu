@@ -65,9 +65,9 @@ const allBrands = [{
     logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150444.png"
 }, {
     id: "12",
-    name: "慕光灯饰",
-    slug: "muguang",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150516.png"
+    name: "TEE NA Lighting",
+    slug: "teena",
+    logoUrl: "https://i.ibb.co/990KpzHK/801278b9a6e1.png"
 }, {
     id: "14",
     name: "伊戈尔",

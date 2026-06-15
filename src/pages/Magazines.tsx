@@ -512,7 +512,7 @@ export default function Magazines() {
                           style={{ width: `${100 / categoryMags.length}%` }}
                         >
                           <div className="relative w-full aspect-[3/4] mb-4 perspective-1000 transition-transform duration-300 transform group-hover:-translate-y-4 group-hover:rotate-1 origin-bottom">
-                            <div className={`absolute inset-0 ${mag.coverImage ? 'bg-white' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden`}>
+                            <div className={`absolute inset-0 ${mag.coverImage ? 'bg-gray-100' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden flex items-center justify-center`}>
                               <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/10 z-10"></div>
                               <div className="absolute left-3 top-0 bottom-0 w-[1px] bg-white/30 z-10"></div>
                               
@@ -520,7 +520,7 @@ export default function Magazines() {
                                 <img 
                                   src={mag.coverImage} 
                                   alt={mag.title}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-contain p-2"
                                 />
                               ) : (
                                 <div className="p-3 h-full flex flex-col relative z-0">

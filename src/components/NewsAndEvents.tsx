@@ -23,30 +23,45 @@ export default function NewsAndEvents() {
   const recentNews = [
     {
       id: 1,
-      title: '灯饰行业的"疯狂动物城"来了！',
-      date: '2025年12月16日',
-      category: '活动',
-      link: 'https://mp.weixin.qq.com/s/dj4IiCw2lTQTdJt5KOzLpw'
+      title: '源头好灯泡，远销欧美、东南亚，怎么做到的？',
+      date: '2026年6月9日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/h37vY3FmnLseC7ecZR9p_Q'
     },
     {
       id: 2,
-      title: '光影名门携秘籍入世，品质锋芒照亮江湖',
-      date: '2025年12月9日',
-      category: '产品',
-      link: 'https://mp.weixin.qq.com/s/egWBg5LSFvEkK7NAltY2MQ'
+      title: '资产被收购！这个国际大牌要凉凉了吗？',
+      date: '2026年6月9日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/_GwYyOoBo6D8jYB80mC7WQ'
     },
     {
       id: 3,
-      title: '君航现货盛大开业，全链实力铸就行业标杆！',
-      date: '2025年11月9日',
-      category: '荣誉',
-      link: 'https://mp.weixin.qq.com/s/iNFYMcp0Y4CMviosQ60GFA'
+      title: '户外灯具定制的"专精特新"来啦！',
+      date: '2026年6月2日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/AEfZWQlYSc49d5vMigFqsw'
     },
     {
       id: 4,
-      title: '新年特惠活动正式启动，优惠力度空前',
-      date: '2025年12月12日',
-      category: '促销'
+      title: '热烈庆祝灯怪照明盛大开业……',
+      date: '2026年6月2日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/3tf-rTGOnIanxEdxSSqL6Q'
+    },
+    {
+      id: 5,
+      title: '石中美者不止玉也，用它做的灯美爆了！',
+      date: '2026年5月26日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/sj0n6sRDtKiv-AoJSufbtw'
+    },
+    {
+      id: 6,
+      title: '爆单急发！赶船期！东方非遗藤编风靡海外',
+      date: '2026年5月19日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/sEYvc8Cn879NPX8xeZum3Q'
     }
   ];
 

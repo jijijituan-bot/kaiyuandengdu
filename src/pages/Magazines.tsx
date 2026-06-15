@@ -40,6 +40,17 @@ const magazines: Record<string, Magazine> = {
     category: 'overseas',
     coverImage: 'https://lf-code-agent.coze.cn/obj/x-ai-cn/332763309314/attachment/c18b02a4e26c9869631d1a9910af8d72_20251223112428.png'
   },
+  overseas_2026: {
+    id: 'overseas_2026',
+    title: '2026第三期海外版',
+    description: '2026年第三期开元海外刊，全球灯饰行业前沿资讯和创新趋势。',
+    icon: 'fa-globe',
+    color: 'from-blue-50 to-blue-100',
+    downloadUrl: 'http://cdn.kypfc.com/2026%E7%AC%AC%E4%B8%89%E6%9C%9F%E6%B5%B7%E5%A4%96%E7%89%88.pdf',
+    fileName: '2026第三期海外版.pdf',
+    category: 'overseas',
+    coverImage: 'https://i.ibb.co/0pCwGGHP/65aac923881b.png'
+  },
   special_5: {
     id: 'special_5',
     title: '第5期开元特刊',

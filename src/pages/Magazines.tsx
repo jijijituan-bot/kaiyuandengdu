@@ -489,8 +489,9 @@ export default function Magazines() {
 
                   <div className="relative z-10 overflow-hidden">
                     <motion.div 
-                      className="grid grid-cols-5 gap-8 md:gap-10"
-                      animate={{ x: -monthlyScrollPosition * (100 / itemsPerPage) + '%' }}
+                      className="flex gap-8 md:gap-10"
+                      style={{ width: `${(categoryMags.length / itemsPerPage) * 100}%` }}
+                      animate={{ x: `${-monthlyScrollPosition * (100 / categoryMags.length) * itemsPerPage}%` }}
                       transition={{ duration: 0.5, ease: 'easeInOut' }}
                     >
                       {categoryMags.map((mag, index) => (
@@ -501,7 +502,8 @@ export default function Magazines() {
                           transition={{ duration: 0.5, delay: index * 0.05 }}
                           viewport={{ once: true }}
                           onClick={() => navigate(`/magazines/${mag.id}`)}
-                          className="group cursor-pointer flex flex-col items-center"
+                          className="group cursor-pointer flex flex-col items-center flex-shrink-0"
+                          style={{ width: `${100 / categoryMags.length}%` }}
                         >
                           <div className="relative w-full aspect-[3/4] mb-4 perspective-1000 transition-transform duration-300 transform group-hover:-translate-y-4 group-hover:rotate-1 origin-bottom">
                             <div className={`absolute inset-0 ${mag.coverImage ? 'bg-white' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden`}>

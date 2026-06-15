@@ -40,9 +40,9 @@ const allBrands = [{
     logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216163831.png"
 }, {
     id: "7",
-    name: "自然爱",
-    slug: "ziranai",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/46f0ae5f37070ba764ac1bbd5bee1912_20251216164049.jpg"
+    name: "天泰照明",
+    slug: "tiantai",
+    logoUrl: "https://i.ibb.co/hxRCFt24/1a2d6254bee5.png"
 }, {
     id: "8",
     name: "美尔佳-赣艺",

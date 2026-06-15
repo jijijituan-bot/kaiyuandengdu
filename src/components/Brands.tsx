@@ -37,9 +37,9 @@ export default function Brands() {
             slug: "yunxing"
         },
         {
-            name: "自然爱",
-            logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/46f0ae5f37070ba764ac1bbd5bee1912_20251216164049.jpg",
-            slug: "ziranai"
+            name: "天泰照明",
+            logoUrl: "https://i.ibb.co/hxRCFt24/1a2d6254bee5.png",
+            slug: "tiantai"
         },
         {
             name: "美尔佳-赣艺",

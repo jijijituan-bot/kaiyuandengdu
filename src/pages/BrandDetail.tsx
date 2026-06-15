@@ -90,16 +90,16 @@ const brandData: Record<string, BrandInfo> = {
       phone: "0760-22369355"
     }
   },
-  ziranai: {
-    name: "自然爱",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/46f0ae5f37070ba764ac1bbd5bee1912_20251216164049.jpg",
-    description: "自然元素融入照明设计的创新企业",
-    history: "自然爱智能科技创始于2008年，一直从事氛围灯照明的研发、生产、销售和售后一条龙服务，十七年灯具智造、服务经验，成为氛围灯照明领域的引领者。",
-    products: ["智能家居体验", "全屋智能照明", "智能照明配件"],
-    advantages: ["独特自然风格", "环保材料选用", "健康护眼照明"],
+  tiantai: {
+    name: "天泰照明",
+    logoUrl: "https://i.ibb.co/hxRCFt24/1a2d6254bee5.png",
+    description: "源头好灯泡，信赖选天泰!",
+    history: "自2007年创立以来，天泰照明始终扎根光源制造领域，深耕行业近二十载，见证照明行业的迭代升级。品牌起步之初专注卤素灯珠、灯杯生产，凭借扎实的工艺和稳定的品质积累口碑。",
+    products: ["家居照明", "酒店工程", "商业照明"],
+    advantages: ["满足客户多元化需求", "品类丰富", "款式齐全"],
     contactInfo: {
-      address: "开元灯具批发城M区231-233卡",
-      phone: "13925354147"
+      address: "中山市古镇镇开元灯具批发城F区151卡",
+      phone: "18861321639"
     }
   },
   meiergai: {
@@ -517,14 +517,14 @@ export default function BrandDetail() {
                     { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217171917.png", alt: "伊戈尔展厅内部环境", title: "专业展厅环境", description: "整洁明亮的展厅，展示全系列LED驱动电源产品" },
                     { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217171925.png", alt: "伊戈尔展厅和产品细节", title: "展厅与产品细节", description: "齐全的产品系列和完善的服务，满足不同客户需求" }
                   ];
-                case "自然爱":
+                case "天泰照明":
                   return [
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216175434.png", alt: "智能家居展示", title: "智能家居体验", description: "现代科技与自然美学的完美融合，打造智能舒适的居住空间" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216175443.png", alt: "自然爱展厅", title: "自然爱智能展厅", description: "小米IoT认证全屋智能照明研发中心，提供一站式智能解决方案" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216175456.png", alt: "智能照明产品展示", title: "智能照明产品线", description: "丰富多样的智能照明产品，满足不同场景需求" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216175502.png", alt: "智能照明配件", title: "智能照明配件", description: "高品质配件，确保智能照明系统稳定运行" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216175508.png", alt: "智能体验区", title: "人车家生态体验", description: "领先的人车家一体化智能生态系统，提供全方位智能生活体验" },
-                    { url: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216175516.png", alt: "自然爱门店", title: "自然爱智能门店", description: "开元灯具批发城M区231-233卡，联系电话：13925354147" }
+                    { url: "https://i.ibb.co/PshxhQF7/bf7430968949.png", alt: "二十年匠心沉淀", title: "二十年匠心沉淀", description: "打造高性价比LED光源产品" },
+                    { url: "https://i.ibb.co/pj0TrxRn/d955914da5d6.png", alt: "深耕行业近二十载", title: "深耕行业近二十载", description: "见证照明行业的迭代升级" },
+                    { url: "https://i.ibb.co/Fkvf2YB5/00f5d4d8156e.png", alt: "顺势转型升级", title: "顺势转型升级", description: "全力布局LED光源生产赛道，紧跟行业节能" },
+                    { url: "https://i.ibb.co/JR2tJp7b/eaacda7ecd98.png", alt: "主营产品涵盖", title: "主营产品涵盖", description: "G4、G9、GU10、E14、E27等全球主流接口类型灯泡" },
+                    { url: "https://i.ibb.co/Fq4YLmk7/aaff01e360cf.png", alt: "跨境领域实力商家", title: "跨境领域实力商家", description: "天泰照明坚持以品质打通全球市场" },
+                    { url: "https://i.ibb.co/vx9r454K/c05e1deee459.png", alt: "二十年匠心坚守", title: "二十年匠心坚守", description: "以现货多、品质稳、交期快、可定制等优势，赢得海内外客户的一致认可与长期信赖" }
                   ];
                 case "三雄极光":
                   return [

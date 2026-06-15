@@ -207,6 +207,11 @@ export default function Magazines() {
     document.title = '开元灯具批发城-集智能商照、家居灯饰、照明配件一站式采购综合体';
   }, []);
 
+  // 路由变化时滚动到顶部
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [type]);
+
   const handleDownload = (url: string, fileName: string) => {
     fetch(url)
       .then(response => response.blob())

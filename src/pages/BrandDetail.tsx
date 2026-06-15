@@ -177,7 +177,7 @@ const brandData: Record<string, BrandInfo> = {
   teena: {
     name: "TEE NA Lighting",
     logoUrl: "https://i.ibb.co/990KpzHK/801278b9a6e1.png",
-    description: "以差异化为核心竞争力的TEE NA Lighting,以"专精特新"为发展内核",
+    description: "以差异化为核心竞争力的TEE NA Lighting,以'专精特新'为发展内核",
     history: "专业、专注是TEE NALighting始终坚守的发展理念，企业从创立伊始一直深耕户外照明领域，品牌精选优质铝材、玻璃、亚克力等耐用材质;光源优选普瑞、科锐等行业知名品牌，并标配防水驱动电源，全系列产品均达到IP65级防水防尘标准，并通过CE、BIS、ROHS等多项国际权威认证，严苛品质经得起全球市场检哈。",
     products: ["庭院", "别墅", "商业", "景观"],
     advantages: ["精准定制", "多元场景需求", "避免同质化竟争"],

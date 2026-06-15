@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function NewsAndEvents() {
+  const [expanded, setExpanded] = useState(false);
   const newsItems = [
     {
       id: 1,
@@ -175,7 +177,7 @@ export default function NewsAndEvents() {
         >
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">资讯列表</h3>
           <div className="space-y-6 pl-8 border-l-4 border-orange-500">
-            {recentNews.map((item, index) => (
+            {(expanded ? recentNews : recentNews.slice(0, 4)).map((item, index) => (
               <motion.div 
                 key={item.id} 
                 initial={{ opacity: 0, x: -20 }}
@@ -203,23 +205,20 @@ export default function NewsAndEvents() {
               </motion.div>
             ))}
           </div>
+          {recentNews.length > 4 && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="px-8 py-2 border-2 border-orange-500 text-orange-500 font-semibold rounded hover:bg-orange-500 hover:text-white transition-all duration-300"
+              >
+                {expanded ? '收起' : '展开更多'}
+                <span className="ml-2">{expanded ? '▲' : '▼'}</span>
+              </button>
+            </div>
+          )}
         </motion.div>
 
-        {/* 底部按钮 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="flex justify-center gap-6"
-        >
-          <button className="px-8 py-2 border-2 border-gray-800 text-gray-800 font-semibold rounded hover:bg-gray-800 hover:text-white transition-all duration-300">
-            查看活动
-          </button>
-          <button className="px-8 py-2 border-2 border-gray-800 text-gray-800 font-semibold rounded hover:bg-gray-800 hover:text-white transition-all duration-300">
-            查看新闻
-          </button>
-        </motion.div>
+
         </div>
       </section>
     </>

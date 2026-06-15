@@ -430,7 +430,7 @@ export default function BrandDetail() {
                 case "TEE NA Lighting":
                   return [
                     { url: "https://i.ibb.co/xWT8PCN/c8123f808cce.png", alt: "专业、专注是始终坚守的发展理念", title: "专业、专注是始终坚守的发展理念", description: "企业从创立伊始一直深耕户外照明领域，品牌精选优质铝材、玻璃、亚克力等耐用材质;光源优选普瑞、科锐等行业知名品牌，并标配防水驱动电源" },
-                    { url: "https://i.ibb.co/cK1pxPj3/093b2458f992.png", alt: "专注小而精产品的企业", title: "专注"小而精"产品的企业", description: "TEENALighting深耕非标定制赛道，避免同质化竟争，可根据客尸需求实现产品外观定制" },
+                    { url: "https://i.ibb.co/cK1pxPj3/093b2458f992.png", alt: "专注小而精产品的企业", title: "专注'小而精'产品的企业", description: "TEENALighting深耕非标定制赛道，避免同质化竟争，可根据客尸需求实现产品外观定制" },
                     { url: "https://i.ibb.co/ZzQ5RdTQ/007fb1267849.png", alt: "创新是品牌立足的核心动力", title: "创新是品牌立足的核心动力", description: "TEENALighting以原创设计打破行业局限，持续引领户外照明美学潮流" },
                     { url: "https://i.ibb.co/WNN58k4w/2f3dfe15ecb9.png", alt: "十余载匠心沉淀", title: "十余载匠心沉淀", description: "TEENALighting不仅以硬实力立足，更以专业形象走向全球" },
                     { url: "https://i.ibb.co/rGfM6jS5/e03655652632.png", alt: "坚持技术创新与设计升级双轮驱动", title: "坚持技术创新与设计升级双轮驱动", description: "TEENALighting将继续深耕户外非标定制领域" },

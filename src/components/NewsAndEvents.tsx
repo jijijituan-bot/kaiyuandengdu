@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function NewsAndEvents() {
-  const [expanded, setExpanded] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
   const newsItems = [
     {
       id: 1,
@@ -177,42 +178,68 @@ export default function NewsAndEvents() {
         >
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">资讯列表</h3>
           <div className="space-y-6 pl-8 border-l-4 border-orange-500">
-            {(expanded ? recentNews : recentNews.slice(0, 4)).map((item, index) => (
-              <motion.div 
-                key={item.id} 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-                viewport={{ once: true }}
-                className="cursor-pointer hover:translate-x-3 transition-transform duration-300 group"
-                onClick={() => {
-                  if (item.link) {
-                    window.open(item.link, '_blank');
-                  }
-                }}
-              >
-                <div className="flex items-start gap-6">
-                  <span className="text-sm bg-orange-500 text-white px-4 py-2 rounded font-semibold whitespace-nowrap mt-1">
-                    {item.category}
-                  </span>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-gray-500">{item.date}</p>
+            {recentNews
+              .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+              .map((item, index) => (
+                <motion.div 
+                  key={item.id} 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 * index }}
+                  viewport={{ once: true }}
+                  className="cursor-pointer hover:translate-x-3 transition-transform duration-300 group"
+                  onClick={() => {
+                    if (item.link) {
+                      window.open(item.link, '_blank');
+                    }
+                  }}
+                >
+                  <div className="flex items-start gap-6">
+                    <span className="text-sm bg-orange-500 text-white px-4 py-2 rounded font-semibold whitespace-nowrap mt-1">
+                      {item.category}
+                    </span>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-gray-500">{item.date}</p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
           </div>
-          {recentNews.length > 4 && (
-            <div className="mt-8 text-center">
+          
+          {/* 分页 */}
+          {recentNews.length > itemsPerPage && (
+            <div className="mt-8 flex justify-center items-center gap-2">
               <button
-                onClick={() => setExpanded(!expanded)}
-                className="px-8 py-2 border-2 border-orange-500 text-orange-500 font-semibold rounded hover:bg-orange-500 hover:text-white transition-all duration-300"
+                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                disabled={currentPage === 1}
+                className="px-4 py-2 border-2 border-orange-500 text-orange-500 font-semibold rounded hover:bg-orange-500 hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {expanded ? '收起' : '展开更多'}
-                <span className="ml-2">{expanded ? '▲' : '▼'}</span>
+                上一页
+              </button>
+              
+              {Array.from({ length: Math.ceil(recentNews.length / itemsPerPage) }, (_, i) => i + 1).map(page => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 font-semibold rounded transition-all duration-300 ${
+                    currentPage === page
+                      ? 'bg-orange-500 text-white'
+                      : 'border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+              
+              <button
+                onClick={() => setCurrentPage(Math.min(Math.ceil(recentNews.length / itemsPerPage), currentPage + 1))}
+                disabled={currentPage === Math.ceil(recentNews.length / itemsPerPage)}
+                className="px-4 py-2 border-2 border-orange-500 text-orange-500 font-semibold rounded hover:bg-orange-500 hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                下一页
               </button>
             </div>
           )}

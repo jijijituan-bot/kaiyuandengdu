@@ -26,24 +26,24 @@ export default function NewsAndEvents() {
   const recentNews = [
     {
       id: 1,
-      title: '源头好灯泡，远销欧美、东南亚，怎么做到的？',
-      date: '2026年6月9日',
+      title: '千年窑火凝素白，灯瓷携手跨山海',
+      date: '2026年7月14日',
       category: '资讯',
-      link: 'https://mp.weixin.qq.com/s/h37vY3FmnLseC7ecZR9p_Q'
+      link: 'https://mp.weixin.qq.com/s/IIJLYAIxLf30-TLx34JZ2w'
     },
     {
       id: 2,
-      title: '资产被收购！这个国际大牌要凉凉了吗？',
-      date: '2026年6月9日',
+      title: '别再装普通灯具了，这盏"筋斗云"颠覆你的想象',
+      date: '2026年7月7日',
       category: '资讯',
-      link: 'https://mp.weixin.qq.com/s/_GwYyOoBo6D8jYB80mC7WQ'
+      link: 'https://mp.weixin.qq.com/s/ZCiFUp9wn0UFwtkwYGK3hg'
     },
     {
       id: 3,
-      title: '中东困局倒逼欧洲换灯，能源危机助中国灯饰迎新机遇',
-      date: '2026年6月16日',
+      title: '十载追光藏匠心，万家灯火不寻常',
+      date: '2026年7月1日',
       category: '资讯',
-      link: 'https://mp.weixin.qq.com/s/LPI-nyQEGsaT0eES0jGe7w'
+      link: 'https://mp.weixin.qq.com/s/HswgBW5awdv0gOVjxXV3gA'
     },
     {
       id: 4,
@@ -54,24 +54,24 @@ export default function NewsAndEvents() {
     },
     {
       id: 5,
-      title: '十载追光藏匠心，万家灯火不寻常',
-      date: '2026年7月1日',
+      title: '中东困局倒逼欧洲换灯，能源危机助中国灯饰迎新机遇',
+      date: '2026年6月16日',
       category: '资讯',
-      link: 'https://mp.weixin.qq.com/s/HswgBW5awdv0gOVjxXV3gA'
+      link: 'https://mp.weixin.qq.com/s/LPI-nyQEGsaT0eES0jGe7w'
     },
     {
       id: 6,
-      title: '别再装普通灯具了，这盏"筋斗云"颠覆你的想象',
-      date: '2026年7月7日',
+      title: '源头好灯泡，远销欧美、东南亚，怎么做到的？',
+      date: '2026年6月9日',
       category: '资讯',
-      link: 'https://mp.weixin.qq.com/s/ZCiFUp9wn0UFwtkwYGK3hg'
+      link: 'https://mp.weixin.qq.com/s/h37vY3FmnLseC7ecZR9p_Q'
     },
     {
       id: 7,
-      title: '千年窑火凝素白，灯瓷携手跨山海',
-      date: '2026年7月14日',
+      title: '资产被收购！这个国际大牌要凉凉了吗？',
+      date: '2026年6月9日',
       category: '资讯',
-      link: 'https://mp.weixin.qq.com/s/IIJLYAIxLf30-TLx34JZ2w'
+      link: 'https://mp.weixin.qq.com/s/_GwYyOoBo6D8jYB80mC7WQ'
     },
     {
       id: 8,

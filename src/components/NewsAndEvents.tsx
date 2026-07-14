@@ -40,27 +40,62 @@ export default function NewsAndEvents() {
     },
     {
       id: 3,
+      title: '中东困局倒逼欧洲换灯，能源危机助中国灯饰迎新机遇',
+      date: '2026年6月16日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/LPI-nyQEGsaT0eES0jGe7w'
+    },
+    {
+      id: 4,
+      title: '夏日降温神器，风扇灯选购指南来了！',
+      date: '2026年6月23日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/lY2ZG_WM_2xd9ge5PTMJmg'
+    },
+    {
+      id: 5,
+      title: '十载追光藏匠心，万家灯火不寻常',
+      date: '2026年7月1日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/HswgBW5awdv0gOVjxXV3gA'
+    },
+    {
+      id: 6,
+      title: '别再装普通灯具了，这盏"筋斗云"颠覆你的想象',
+      date: '2026年7月7日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/ZCiFUp9wn0UFwtkwYGK3hg'
+    },
+    {
+      id: 7,
+      title: '千年窑火凝素白，灯瓷携手跨山海',
+      date: '2026年7月14日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/IIJLYAIxLf30-TLx34JZ2w'
+    },
+    {
+      id: 8,
       title: '户外灯具定制的"专精特新"来啦！',
       date: '2026年6月2日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/AEfZWQlYSc49d5vMigFqsw'
     },
     {
-      id: 4,
+      id: 9,
       title: '热烈庆祝灯怪照明盛大开业……',
       date: '2026年6月2日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/3tf-rTGOnIanxEdxSSqL6Q'
     },
     {
-      id: 5,
+      id: 10,
       title: '石中美者不止玉也，用它做的灯美爆了！',
       date: '2026年5月26日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/sj0n6sRDtKiv-AoJSufbtw'
     },
     {
-      id: 6,
+      id: 11,
       title: '爆单急发！赶船期！东方非遗藤编风靡海外',
       date: '2026年5月19日',
       category: '资讯',

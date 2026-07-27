@@ -22,11 +22,6 @@ export default function Brands() {
             slug: "meihu"
         },
         {
-            name: "品泽外壳",
-            logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251215173742.png",
-            slug: "pinze"
-        },
-        {
             name: "问界台灯",
             logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216163729.png",
             slug: "wenjie"

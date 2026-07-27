@@ -24,11 +24,6 @@ const allBrands = [{
     slug: "meihu",
     logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251215174719.png"
 }, {
-    id: "4",
-    name: "品泽外壳",
-    slug: "pinze",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251215174723.png"
-}, {
     id: "5",
     name: "问界台灯",
     slug: "wenjie",

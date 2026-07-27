@@ -195,6 +195,17 @@ const magazines: Record<string, Magazine> = {
     category: 'monthly',
     coverImage: 'https://i.ibb.co/JW9LLFM4/5c5f6e7d25f4.png'
   },
+  monthly_7: {
+    id: 'monthly_7',
+    title: '2026-第七期月刊',
+    description: '2026年第七期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: 'http://cdn.kypfc.com/2026-%E7%AC%AC%E4%B8%83%E6%9C%9F%E6%9C%88%E5%88%8A%20.pdf',
+    fileName: '2026-第七期月刊.pdf',
+    category: 'monthly',
+    coverImage: 'https://i.ibb.co/5X81CkZQ/8246a8389c87.png'
+  },
 };
 
 export default function Magazines() {

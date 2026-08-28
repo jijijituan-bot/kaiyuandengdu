@@ -7,11 +7,6 @@ export default function Brands() {
     // 显示12个品牌（从AllBrands中选取）
     const brands = [
         {
-            name: "视康照明",
-            logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/attachment/2904257071426108/视康照明_20251118142648.jpg",
-            slug: "shikang"
-        },
-        {
             name: "超华水晶",
             logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/6965926c35124928465eead4d6e3472a_20251215173308.png",
             slug: "chaohua"
@@ -45,11 +40,6 @@ export default function Brands() {
             name: "江云水晶灯艺",
             logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216164252.png",
             slug: "jiangyun"
-        },
-        {
-            name: "昂克赛斯",
-            logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150403.png",
-            slug: "angkesaisi"
         },
         {
             name: "敬业灯饰",

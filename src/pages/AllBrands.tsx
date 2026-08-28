@@ -9,11 +9,6 @@ import Contact from "../components/Contact";
 import { useEffect } from "react";
 
 const allBrands = [{
-    id: "1",
-    name: "视康照明",
-    slug: "shikang",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251215175127.png"
-}, {
     id: "2",
     name: "超华水晶",
     slug: "chaohua",
@@ -49,11 +44,6 @@ const allBrands = [{
     slug: "jiangyun",
     logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251216164252.png"
 }, {
-    id: "10",
-    name: "昂克赛斯",
-    slug: "angkesaisi",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150403.png"
-}, {
     id: "11",
     name: "敬业灯饰",
     slug: "jingye",
@@ -68,11 +58,6 @@ const allBrands = [{
     name: "伊戈尔",
     slug: "yigeer",
     logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150658.png"
-}, {
-    id: "15",
-    name: "三雄极光",
-    slug: "sanxiong",
-    logoUrl: "https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251217150721.png"
 }, {
     id: "16",
     name: "杰品6988灯饰",

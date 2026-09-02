@@ -206,6 +206,28 @@ const magazines: Record<string, Magazine> = {
     category: 'monthly',
     coverImage: 'https://i.ibb.co/5X81CkZQ/8246a8389c87.png'
   },
+  monthly_8: {
+    id: 'monthly_8',
+    title: '2026-第八期月刊',
+    description: '2026年第八期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: 'https://www.ashot.live/api/shared/workspace-result/AXWNRaqhHZJKSh7XxT_pn67c0Bzlth2_BVK95sblwejT6cwJZytN_TLbXIlo6Ugxv-PYNOLQE7COCihMs-JNGFpooZ035a0fYiRbgcg',
+    fileName: '2026-第八期月刊.pdf',
+    category: 'monthly',
+    coverImage: 'https://www.ashot.live/api/shared/workspace-result/ATcyv9Sgg_8Tu-vI5XpXP2LCYpRb7cNSIgweq1gf1dGZlIx791A-ZWsOZ6zWq39j_bZ4TWI5Q8aVole_BtwDo64kCuFV6gpsM_StqZY'
+  },
+  monthly_9: {
+    id: 'monthly_9',
+    title: '2026-第九期月刊',
+    description: '2026年第九期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: 'https://www.ashot.live/api/shared/workspace-result/AfHq9hgYK_g3lz2MzTZ2E7Xdn7XvFbAGijBZvG-FKBZ2RNbGQ0Hyny04yFSmu5jtUxThvQVoIvIHEIsXYm4rjpp9MXOQJmhhEPPtwm0',
+    fileName: '2026-第九期月刊.pdf',
+    category: 'monthly',
+    coverImage: 'https://www.ashot.live/api/shared/workspace-result/AbCCZ-P3k0YTznl_b62DIwmJhgBpe6dD_ZULa3EyRI3lu2WH6lH4t8aNGvjmM2GybQcELLTh8VlCJVbfytRUCy7qbGNxN0ulcPyjPOI'
+  },
 };
 
 export default function Magazines() {

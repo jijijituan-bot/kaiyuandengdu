@@ -247,15 +247,8 @@ export default function Magazines() {
     setMonthlyScrollPosition(0);
   }, [type]);
 
-  const handleDownload = (url: string, fileName: string) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = fileName;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    toast.success(`${fileName} 下载成功！`);
+  const handleDownload = (url: string, _fileName: string) => {
+    window.open(url, '_blank');
   };
 
   // 详情页面

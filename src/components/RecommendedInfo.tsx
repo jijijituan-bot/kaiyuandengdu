@@ -148,41 +148,6 @@ export default function RecommendedInfo({ onSectionChange }: RecommendedInfoProp
         </div>
 
         {/* 第三行：推荐商家 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">推荐商家</h3>
-            <div className="w-20 h-1.5 bg-orange-500 mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-10 max-w-sm mx-auto">
-            {/* 美乎灯饰 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              viewport={{ once: true }}
-              onClick={() => handleBrandClick('meihu')}
-              className="relative h-[420px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer group rounded-lg bg-white"
-            >
-              <div className="h-3/4 overflow-hidden">
-                <img 
-                  src="https://lf-code-agent.coze.cn/obj/x-ai-cn/288100166146/attachment/image_20251215174719.png"
-                  alt="美乎灯饰"
-                  className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-gray-100 to-gray-200 p-6">
-                <h4 className="text-gray-800 text-xl font-bold mb-2">美乎灯饰</h4>
-                <p className="text-gray-600 text-sm">现代简约风格灯饰设计与制造</p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -228,6 +228,17 @@ const magazines: Record<string, Magazine> = {
     category: 'monthly',
     coverImage: '/images/monthly-covers/第九期月刊封面.png'
   },
+  monthly_10: {
+    id: 'monthly_10',
+    title: '2026-第十期月刊',
+    description: '2026年第十期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
+    icon: 'fa-calendar',
+    color: 'from-green-50 to-green-100',
+    downloadUrl: '/images/monthly-pdfs/2026-第十期月刊.pdf',
+    fileName: '2026-第十期月刊.pdf',
+    category: 'monthly',
+    coverImage: '/images/monthly-covers/第十期月刊封面.png'
+  },
 };
 
 export default function Magazines() {

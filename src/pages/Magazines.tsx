@@ -482,7 +482,9 @@ export default function Magazines() {
                  const numB = parseInt(b.id.split('_')[1]);
                  return numB - numA;
                }
-               return a.id > b.id ? -1 : 1;
+               const numA = parseInt(a.id.split('_')[1]);
+               const numB = parseInt(b.id.split('_')[1]);
+               return numB - numA;
             });
 
           if (categoryMags.length === 0) return null;

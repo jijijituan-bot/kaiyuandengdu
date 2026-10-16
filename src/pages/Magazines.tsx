@@ -234,10 +234,10 @@ const magazines: Record<string, Magazine> = {
     description: '第10期开元特刊，专题报道开元灯具批发城的重大活动和新品发布。',
     icon: 'fa-star',
     color: 'from-orange-50 to-orange-100',
-    downloadUrl: '/images/monthly-pdfs/2026-第十期月刊.pdf',
+    downloadUrl: '/images/monthly-pdfs/第10期开元特刊.pdf',
     fileName: '第10期开元特刊.pdf',
     category: 'special',
-    coverImage: '/images/monthly-covers/第十期月刊封面.png'
+    coverImage: '/images/monthly-covers/第10期开元特刊的封面.png'
   },
 };
 

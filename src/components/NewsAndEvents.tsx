@@ -26,76 +26,153 @@ export default function NewsAndEvents() {
   const recentNews = [
     {
       id: 1,
+      title: '刀光剑影闯三江，终成水晶灯行业一代宗师',
+      date: '2026年10月13日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/08oWugbTm4e8T4BXYETt8w'
+    },
+    {
+      id: 2,
+      title: '让科技照进现实，3D打印灯饰重塑行业创新新范式',
+      date: '2026年10月6日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/NZ6JDU1vNFy6SmaNhAq-lw'
+    },
+    {
+      id: 3,
+      title: '藏大宅的东方美学，把星河与吉意带回家',
+      date: '2026年9月22日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/eb6GM3ilIBYRfImU4Lm13g'
+    },
+    {
+      id: 4,
+      title: '全铜灯行业顶流，凭什么是他？',
+      date: '2026年9月15日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/fBjtnP9Z1FT86V4kP5__aQ'
+    },
+    {
+      id: 5,
+      title: '问灯哪得清如许，唯有云石更透白',
+      date: '2026年9月8日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/43fpToqx4JFr9dO2pUwl7Q'
+    },
+    {
+      id: 6,
+      title: '用感恩的心做好灯，不到4年就成为行业前列！',
+      date: '2026年9月1日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/_i3Q4X5CxZB0mcDINPKuOg'
+    },
+    {
+      id: 7,
+      title: '以微见精：一枚小扣针的二十载匠心坚守',
+      date: '2026年8月25日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/vzgHka4bsgpC3lnQLkD_4Q'
+    },
+    {
+      id: 8,
+      title: '开元灯具批发城举办照明3C认证全攻略宣讲会，助力商户合规经营，提质发展',
+      date: '2026年8月14日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/FN1gcf33q4SNd4g142yQhA'
+    },
+    {
+      id: 9,
+      title: '这些工装灯具，台球厅里的小姐姐都说好！',
+      date: '2026年8月12日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/jw4KzRefsQNcdplxmQWbfg'
+    },
+    {
+      id: 10,
+      title: '从代工到自主品牌，这家灯配企业如何成行业教科书？',
+      date: '2026年8月4日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/H200g7kYiwC9qMlfCwOrgA'
+    },
+    {
+      id: 11,
+      title: '不锈钢灯，灯饰行业的"战狼"，简直夯爆了！',
+      date: '2026年7月21日',
+      category: '资讯',
+      link: 'https://mp.weixin.qq.com/s/G--a7cavBF61OOBxEEg_BQ'
+    },
+    {
+      id: 12,
       title: '千年窑火凝素白，灯瓷携手跨山海',
       date: '2026年7月14日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/IIJLYAIxLf30-TLx34JZ2w'
     },
     {
-      id: 2,
+      id: 13,
       title: '别再装普通灯具了，这盏"筋斗云"颠覆你的想象',
       date: '2026年7月7日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/ZCiFUp9wn0UFwtkwYGK3hg'
     },
     {
-      id: 3,
+      id: 14,
       title: '十载追光藏匠心，万家灯火不寻常',
       date: '2026年7月1日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/HswgBW5awdv0gOVjxXV3gA'
     },
     {
-      id: 4,
+      id: 15,
       title: '夏日降温神器，风扇灯选购指南来了！',
       date: '2026年6月23日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/lY2ZG_WM_2xd9ge5PTMJmg'
     },
     {
-      id: 5,
+      id: 16,
       title: '中东困局倒逼欧洲换灯，能源危机助中国灯饰迎新机遇',
       date: '2026年6月16日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/LPI-nyQEGsaT0eES0jGe7w'
     },
     {
-      id: 6,
+      id: 17,
       title: '源头好灯泡，远销欧美、东南亚，怎么做到的？',
       date: '2026年6月9日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/h37vY3FmnLseC7ecZR9p_Q'
     },
     {
-      id: 7,
+      id: 18,
       title: '资产被收购！这个国际大牌要凉凉了吗？',
       date: '2026年6月9日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/_GwYyOoBo6D8jYB80mC7WQ'
     },
     {
-      id: 8,
+      id: 19,
       title: '户外灯具定制的"专精特新"来啦！',
       date: '2026年6月2日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/AEfZWQlYSc49d5vMigFqsw'
     },
     {
-      id: 9,
+      id: 20,
       title: '热烈庆祝灯怪照明盛大开业……',
       date: '2026年6月2日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/3tf-rTGOnIanxEdxSSqL6Q'
     },
     {
-      id: 10,
+      id: 21,
       title: '石中美者不止玉也，用它做的灯美爆了！',
       date: '2026年5月26日',
       category: '资讯',
       link: 'https://mp.weixin.qq.com/s/sj0n6sRDtKiv-AoJSufbtw'
     },
     {
-      id: 11,
+      id: 22,
       title: '爆单急发！赶船期！东方非遗藤编风靡海外',
       date: '2026年5月19日',
       category: '资讯',

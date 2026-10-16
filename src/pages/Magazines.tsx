@@ -228,15 +228,15 @@ const magazines: Record<string, Magazine> = {
     category: 'monthly',
     coverImage: '/images/monthly-covers/第九期月刊封面.png'
   },
-  monthly_10: {
-    id: 'monthly_10',
-    title: '2026-第十期月刊',
-    description: '2026年第十期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
-    icon: 'fa-calendar',
-    color: 'from-green-50 to-green-100',
+  special_10: {
+    id: 'special_10',
+    title: '第10期开元特刊',
+    description: '第10期开元特刊，专题报道开元灯具批发城的重大活动和新品发布。',
+    icon: 'fa-star',
+    color: 'from-orange-50 to-orange-100',
     downloadUrl: '/images/monthly-pdfs/2026-第十期月刊.pdf',
-    fileName: '2026-第十期月刊.pdf',
-    category: 'monthly',
+    fileName: '第10期开元特刊.pdf',
+    category: 'special',
     coverImage: '/images/monthly-covers/第十期月刊封面.png'
   },
 };
@@ -245,7 +245,12 @@ export default function Magazines() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const magazine = type ? magazines[type] : null;
-  const [monthlyScrollPosition, setMonthlyScrollPosition] = useState(0);
+  const [scrollPositions, setScrollPositions] = useState<Record<string, number>>({});
+
+  const getScrollPosition = (cat: string) => scrollPositions[cat] || 0;
+  const setScrollPosition = (cat: string, pos: number) => {
+    setScrollPositions(prev => ({ ...prev, [cat]: pos }));
+  };
 
   // 设置页面标题
   useEffect(() => {
@@ -255,7 +260,7 @@ export default function Magazines() {
   // 路由变化时滚动到顶部并重置状态
   useEffect(() => {
     window.scrollTo(0, 0);
-    setMonthlyScrollPosition(0);
+    setScrollPositions({});
   }, [type]);
 
   const handleDownload = (url: string, _fileName: string) => {
@@ -477,13 +482,8 @@ export default function Magazines() {
           const categoryMags = Object.values(magazines)
             .filter(mag => mag.category === category && !mag.parentId)
             .sort((a, b) => {
-               if(category === 'special') {
-                 const numA = parseInt(a.id.split('_')[1]);
-                 const numB = parseInt(b.id.split('_')[1]);
-                 return numB - numA;
-               }
-               const numA = parseInt(a.id.split('_')[1]);
-               const numB = parseInt(b.id.split('_')[1]);
+               const numA = parseInt(a.id.split('_').pop() || '0');
+               const numB = parseInt(b.id.split('_').pop() || '0');
                return numB - numA;
             });
 
@@ -492,6 +492,7 @@ export default function Magazines() {
           // 月刊使用横向滚动
           if (category === 'monthly') {
             const itemsPerPage = 5;
+            const scrollPos = getScrollPosition(category);
             const maxScroll = Math.max(0, categoryMags.length - itemsPerPage);
             
             return (
@@ -503,15 +504,15 @@ export default function Magazines() {
                   {categoryMags.length > itemsPerPage && (
                     <div className="flex gap-2 ml-4">
                       <button
-                        onClick={() => setMonthlyScrollPosition(Math.max(0, monthlyScrollPosition - 1))}
-                        disabled={monthlyScrollPosition === 0}
+                        onClick={() => setScrollPosition(category, Math.max(0, scrollPos - 1))}
+                        disabled={scrollPos === 0}
                         className="w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-md"
                       >
                         <i className="fas fa-chevron-left"></i>
                       </button>
                       <button
-                        onClick={() => setMonthlyScrollPosition(Math.min(maxScroll, monthlyScrollPosition + 1))}
-                        disabled={monthlyScrollPosition >= maxScroll}
+                        onClick={() => setScrollPosition(category, Math.min(maxScroll, scrollPos + 1))}
+                        disabled={scrollPos >= maxScroll}
                         className="w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-md"
                       >
                         <i className="fas fa-chevron-right"></i>
@@ -528,7 +529,7 @@ export default function Magazines() {
                     <motion.div 
                       className="flex gap-8 md:gap-10"
                       style={{ width: `${(categoryMags.length / itemsPerPage) * 100}%` }}
-                      animate={{ x: `${-monthlyScrollPosition * (100 / categoryMags.length) * itemsPerPage}%` }}
+                      animate={{ x: `${-scrollPos * (100 / categoryMags.length) * itemsPerPage}%` }}
                       transition={{ duration: 0.5, ease: 'easeInOut' }}
                     >
                       {categoryMags.map((mag, index) => (
@@ -546,22 +547,15 @@ export default function Magazines() {
                             <div className={`absolute inset-0 ${mag.coverImage ? 'bg-gray-100' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden flex items-center justify-center`}>
                               <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/10 z-10"></div>
                               <div className="absolute left-3 top-0 bottom-0 w-[1px] bg-white/30 z-10"></div>
-                              
                               {mag.coverImage ? (
-                                <img 
-                                  src={mag.coverImage} 
-                                  alt={mag.title}
-                                  className="w-full h-full object-contain p-2"
-                                />
+                                <img src={mag.coverImage} alt={mag.title} className="w-full h-full object-contain p-2" />
                               ) : (
                                 <div className="p-3 h-full flex flex-col relative z-0">
                                   <div className="flex justify-between items-start mb-2">
                                     <i className={`fas ${mag.icon} text-lg text-gray-800/40`}></i>
                                     <span className="text-[8px] font-bold text-gray-500 border border-gray-400/30 px-1 rounded">PDF</span>
                                   </div>
-                                  <h4 className="text-lg font-serif font-bold text-gray-800 leading-tight mb-2 line-clamp-3">
-                                    {mag.title.replace(/开元|版|期/g, '')}
-                                  </h4>
+                                  <h4 className="text-lg font-serif font-bold text-gray-800 leading-tight mb-2 line-clamp-3">{mag.title.replace(/开元|版|期/g, '')}</h4>
                                   <div className="mt-auto pt-2 border-t border-black/5">
                                     <p className="text-[10px] text-gray-600 line-clamp-2 leading-tight opacity-80">{mag.description}</p>
                                   </div>
@@ -574,14 +568,9 @@ export default function Magazines() {
                           <div className="w-[80%] h-3 bg-black/20 blur-md rounded-full transition-all duration-300 group-hover:w-[90%] group-hover:blur-lg"></div>
                           <div className="mt-4 text-center w-full">
                             <h4 className="text-sm font-bold text-gray-800 mb-2 truncate px-1 group-hover:text-orange-600 transition-colors">{mag.title}</h4>
-                            <button 
+                            <button
                               className="text-xs bg-white border border-gray-300 text-gray-600 px-3 py-1 rounded-full hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all shadow-sm flex items-center justify-center mx-auto gap-1"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                if (!mag.hasSubVersions) {
-                                  handleDownload(mag.downloadUrl, mag.fileName);
-                                }
-                              }}
+                              onClick={(e) => { e.stopPropagation(); if (!mag.hasSubVersions) { handleDownload(mag.downloadUrl, mag.fileName); } }}
                             >
                               <i className={`fas ${mag.hasSubVersions ? 'fa-folder-open' : 'fa-download'} text-[10px]`}></i>
                               <span>{mag.hasSubVersions ? '查看' : '下载'}</span>
@@ -596,19 +585,47 @@ export default function Magazines() {
             );
           }
 
+          const scrollPos = getScrollPosition(category);
+          const itemsPerPage = 5;
+          const maxScroll = Math.max(0, categoryMags.length - itemsPerPage);
+
           return (
             <div key={category} className="mb-24 relative">
-               <div className="flex items-center mb-12">
-                 <div className="w-2 h-8 bg-orange-500 mr-4"></div>
-                 <h3 className="text-2xl font-bold text-gray-800 tracking-wide">{categoryTitles[category]}</h3>
-                 <div className="flex-grow ml-6 h-px bg-gray-200"></div>
-               </div>
+              <div className="flex items-center mb-12">
+                <div className="w-2 h-8 bg-orange-500 mr-4"></div>
+                <h3 className="text-2xl font-bold text-gray-800 tracking-wide">{categoryTitles[category]}</h3>
+                <div className="flex-grow ml-6 h-px bg-gray-200"></div>
+                {categoryMags.length > itemsPerPage && (
+                  <div className="flex gap-2 ml-4">
+                    <button
+                      onClick={() => setScrollPosition(category, Math.max(0, scrollPos - 1))}
+                      disabled={scrollPos === 0}
+                      className="w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-md"
+                    >
+                      <i className="fas fa-chevron-left"></i>
+                    </button>
+                    <button
+                      onClick={() => setScrollPosition(category, Math.min(maxScroll, scrollPos + 1))}
+                      disabled={scrollPos >= maxScroll}
+                      className="w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-md"
+                    >
+                      <i className="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                )}
+              </div>
 
-               <div className="relative bg-[#f0e6d2] px-8 pt-12 pb-4 rounded-lg shadow-inner border border-[#e0d6c2]">
-                  <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] pointer-events-none"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-6 bg-[#dcbfa3] border-t border-[#c5a88d] shadow-md transform translate-y-2 rounded-b-lg z-0"></div>
+              <div className="relative bg-[#f0e6d2] px-8 pt-12 pb-4 rounded-lg shadow-inner border border-[#e0d6c2] overflow-hidden">
+                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-6 bg-[#dcbfa3] border-t border-[#c5a88d] shadow-md transform translate-y-2 rounded-b-lg z-0"></div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 relative z-10">
+                <div className="relative z-10 overflow-hidden">
+                  <motion.div
+                    className="flex gap-8 md:gap-10"
+                    style={{ width: `${(categoryMags.length / itemsPerPage) * 100}%` }}
+                    animate={{ x: `${-scrollPos * (100 / categoryMags.length) * itemsPerPage}%` }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  >
                     {categoryMags.map((mag, index) => (
                       <motion.div
                         key={mag.id}
@@ -617,48 +634,37 @@ export default function Magazines() {
                         transition={{ duration: 0.5, delay: index * 0.05 }}
                         viewport={{ once: true }}
                         onClick={() => navigate(`/magazines/${mag.id}`)}
-                        className="group cursor-pointer flex flex-col items-center"
+                        className="group cursor-pointer flex flex-col items-center flex-shrink-0"
+                        style={{ width: `${100 / categoryMags.length}%` }}
                       >
                         <div className="relative w-full aspect-[3/4] mb-4 perspective-1000 transition-transform duration-300 transform group-hover:-translate-y-4 group-hover:rotate-1 origin-bottom">
-                          <div className={`absolute inset-0 ${mag.coverImage ? 'bg-gray-100' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden ${mag.coverImage ? 'flex items-center justify-center' : ''}`}>
-                             <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/10 z-10"></div>
-                             <div className="absolute left-3 top-0 bottom-0 w-[1px] bg-white/30 z-10"></div>
-                             
-                             {mag.coverImage ? (
-                               <img 
-                                 src={mag.coverImage} 
-                                 alt={mag.title}
-                                 className="w-full h-full object-contain p-2"
-                               />
-                             ) : (
-                             <div className="p-3 h-full flex flex-col relative z-0">
+                          <div className={`absolute inset-0 ${mag.coverImage ? 'bg-gray-100' : `bg-gradient-to-br ${mag.color}`} rounded-r-md rounded-l-sm shadow-xl border-l border-white/30 overflow-hidden flex items-center justify-center`}>
+                            <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/10 z-10"></div>
+                            <div className="absolute left-3 top-0 bottom-0 w-[1px] bg-white/30 z-10"></div>
+                            {mag.coverImage ? (
+                              <img src={mag.coverImage} alt={mag.title} className="w-full h-full object-contain p-2" />
+                            ) : (
+                              <div className="p-3 h-full flex flex-col relative z-0">
                                 <div className="flex justify-between items-start mb-2">
                                   <i className={`fas ${mag.icon} text-lg text-gray-800/40`}></i>
                                   <span className="text-[8px] font-bold text-gray-500 border border-gray-400/30 px-1 rounded">PDF</span>
                                 </div>
-                                <h4 className="text-lg font-serif font-bold text-gray-800 leading-tight mb-2 line-clamp-3">
-                                  {mag.title.replace(/开元|版|期/g, '')}
-                                </h4>
+                                <h4 className="text-lg font-serif font-bold text-gray-800 leading-tight mb-2 line-clamp-3">{mag.title.replace(/开元|版|期/g, '')}</h4>
                                 <div className="mt-auto pt-2 border-t border-black/5">
                                   <p className="text-[10px] text-gray-600 line-clamp-2 leading-tight opacity-80">{mag.description}</p>
                                 </div>
-                             </div>
-                             )}
-                             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none"></div>
+                              </div>
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none"></div>
                           </div>
                           <div className="absolute top-[1px] bottom-[1px] right-0 w-[4px] bg-white transform translate-x-[2px] translate-z-[-2px] skew-y-1 shadow-sm"></div>
                         </div>
                         <div className="w-[80%] h-3 bg-black/20 blur-md rounded-full transition-all duration-300 group-hover:w-[90%] group-hover:blur-lg"></div>
                         <div className="mt-4 text-center w-full">
                           <h4 className="text-sm font-bold text-gray-800 mb-2 truncate px-1 group-hover:text-orange-600 transition-colors">{mag.title}</h4>
-                          <button 
+                          <button
                             className="text-xs bg-white border border-gray-300 text-gray-600 px-3 py-1 rounded-full hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all shadow-sm flex items-center justify-center mx-auto gap-1"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (!mag.hasSubVersions) {
-                                handleDownload(mag.downloadUrl, mag.fileName);
-                              }
-                            }}
+                            onClick={(e) => { e.stopPropagation(); if (!mag.hasSubVersions) { handleDownload(mag.downloadUrl, mag.fileName); } }}
                           >
                             <i className={`fas ${mag.hasSubVersions ? 'fa-folder-open' : 'fa-download'} text-[10px]`}></i>
                             <span>{mag.hasSubVersions ? '查看' : '下载'}</span>
@@ -666,8 +672,9 @@ export default function Magazines() {
                         </div>
                       </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
+              </div>
             </div>
           );
         })}

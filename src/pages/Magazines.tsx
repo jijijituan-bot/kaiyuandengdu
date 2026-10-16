@@ -212,10 +212,10 @@ const magazines: Record<string, Magazine> = {
     description: '2026年第八期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
     icon: 'fa-calendar',
     color: 'from-green-50 to-green-100',
-    downloadUrl: 'https://www.ashot.live/api/shared/workspace-result/AXWNRaqhHZJKSh7XxT_pn67c0Bzlth2_BVK95sblwejT6cwJZytN_TLbXIlo6Ugxv-PYNOLQE7COCihMs-JNGFpooZ035a0fYiRbgcg',
+    downloadUrl: '/images/monthly-pdfs/2026-第八期月刊.pdf',
     fileName: '2026-第八期月刊.pdf',
     category: 'monthly',
-    coverImage: 'https://www.ashot.live/api/shared/workspace-result/ATcyv9Sgg_8Tu-vI5XpXP2LCYpRb7cNSIgweq1gf1dGZlIx791A-ZWsOZ6zWq39j_bZ4TWI5Q8aVole_BtwDo64kCuFV6gpsM_StqZY'
+    coverImage: '/images/monthly-covers/第八期月刊封面.png'
   },
   monthly_9: {
     id: 'monthly_9',
@@ -223,10 +223,10 @@ const magazines: Record<string, Magazine> = {
     description: '2026年第九期开元月刊，每月更新的资讯、市场分析和商家风采展示。',
     icon: 'fa-calendar',
     color: 'from-green-50 to-green-100',
-    downloadUrl: 'https://www.ashot.live/api/shared/workspace-result/AfHq9hgYK_g3lz2MzTZ2E7Xdn7XvFbAGijBZvG-FKBZ2RNbGQ0Hyny04yFSmu5jtUxThvQVoIvIHEIsXYm4rjpp9MXOQJmhhEPPtwm0',
+    downloadUrl: '/images/monthly-pdfs/2026-第九期月刊.pdf',
     fileName: '2026-第九期月刊.pdf',
     category: 'monthly',
-    coverImage: 'https://www.ashot.live/api/shared/workspace-result/AbCCZ-P3k0YTznl_b62DIwmJhgBpe6dD_ZULa3EyRI3lu2WH6lH4t8aNGvjmM2GybQcELLTh8VlCJVbfytRUCy7qbGNxN0ulcPyjPOI'
+    coverImage: '/images/monthly-covers/第九期月刊封面.png'
   },
 };
 
@@ -248,22 +248,14 @@ export default function Magazines() {
   }, [type]);
 
   const handleDownload = (url: string, fileName: string) => {
-    fetch(url)
-      .then(response => response.blob())
-      .then(blob => {
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(link.href);
-        toast.success(`${fileName} 下载成功！`);
-      })
-      .catch(() => {
-        window.open(url, '_blank');
-        toast.success(`${fileName} 已打开，请右键保存`);
-      });
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast.success(`${fileName} 下载成功！`);
   };
 
   // 详情页面
